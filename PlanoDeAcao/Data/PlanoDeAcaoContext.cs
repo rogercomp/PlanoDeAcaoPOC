@@ -21,5 +21,7 @@ namespace PlanoDeAcao.Data
         public DbSet<Visita> Visita { get; set; }
 
         public DbSet<Parecer> Parecer { get; set; }
+
+        public DbSet<ParecerFotos> ParecerFotos { get; set; }
     }
 }
