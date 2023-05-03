@@ -7,8 +7,14 @@
 <h1>Clientes</h1>
 
 <p>
-    <button class="btn btn-primary" asp-action="Create" name="theme" value="_Layout2">Novo</button>        
+    @using (Html.BeginForm("Create", "Clientes", FormMethod.Get))
+    {
+        <button class="btn btn-primary" type="submit" name="btNovo" id="btNovo">Novo</button>
+    }
 </p>
+
+
+
 <table class="table">
     <thead>
         <tr>
