@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PlanoDeAcao.Models.ActionPlan>
+
+@{
+    ViewData["Title"] = "Plano de Ação";
+}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Status das Atividades</h3>
+        <div id="chart1">
+            @Html.Partial("Grafico1", null)
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h3>Análise de Desempenho</h3>
+        <div id="chart2">
+            @Html.Partial("Grafico2", null)        
+        </div>        
+    </div>
+    <div class="col-md-12">
+        <h2>Plano de Ação</h2>
+        <p>
+            <button class="btn btn-primary" asp-action="Create" name="theme" value="_Layout2">Novo</button>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Visita
+                    </th>
+                    <th>
+                        Data
+                    </th>
+                    <th>
+                        Cliente
+                    </th>
+                    <th>
+                        O que?
+                    </th>
+                    <th>
+                        Por que?
+                    </th>
+                    <th>
+                        Quem?
+                    </th>
+                    <th>
+                        Onde?
+                    </th>
+                    <th>
+                        Quando?
+                    </th>
+                    <th>
+                        Como?
+                    </th>
+                    <th>
+                        Quanto?
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Parecer.Visita.Id)
+                        </td>
+                        <td>                            
+                            @Html.DisplayFor(modelItem => item.Parecer.Visita.DataVisita)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Parecer.Visita.Cliente.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.What)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Why)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Who)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Where)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.When)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.How)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HowMuch)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |                            
+                            <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿
+<!--2. Declare the div-->
+<div id="chart2" style="width:400px; height: 100%;"></div>
+
+<!--3. Chart displaying -->
+<script type="text/javascript">
+    // Load the Visualization API and the piechart package.
+    google.charts.load('visualization', '1', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Mês', 'Planejado', 'Realizado'],
+            ['JAN', 1000, 400],
+            ['FEV', 1170, 460],
+            ['MAR', 660, 1120],
+            ['ABR', 1030, 540]
+        ]);
+
+        var options = {
+            title: '',
+            hAxis: { title: '', titleTextStyle: { color: '#333' } },
+            vAxis: { minValue: 0 }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart2'));
+        chart.draw(data, options);
+    }
+</script>

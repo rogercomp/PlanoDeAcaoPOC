@@ -1,0 +1,73 @@
+﻿@model PlanoDeAcao.Models.ActionPlan
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>ActionPlan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div class="row">
+                <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="What" class="control-label"></label>
+                        <input asp-for="What" class="form-control" />
+                        <span asp-validation-for="What" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Where" class="control-label"></label>
+                        <input asp-for="Where" class="form-control" />
+                        <span asp-validation-for="Where" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="HowMuch" class="control-label"></label>
+                        <input asp-for="HowMuch" class="form-control" />
+                        <span asp-validation-for="HowMuch" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                   
+                    <div class="form-group">
+                        <label asp-for="Why" class="control-label"></label>
+                        <input asp-for="Why" class="form-control" />
+                        <span asp-validation-for="Why" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="When" class="control-label"></label>
+                        <input asp-for="When" class="form-control" />
+                        <span asp-validation-for="When" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Who" class="control-label"></label>
+                        <input asp-for="Who" class="form-control" />
+                        <span asp-validation-for="Who" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="How" class="control-label"></label>
+                        <input asp-for="How" class="form-control" />
+                        <span asp-validation-for="How" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
